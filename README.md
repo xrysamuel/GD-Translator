@@ -1,4 +1,4 @@
-# GD-Translator - AI Translator as GoldenDict Extension
+# GD-Translator - An AI Translator as a GoldenDict Extension
 
 This is a Python AI Translator designed as an extension for [GoldenDict](https://github.com/goldendict/goldendict). This tool leverages LLM API (e.g., OpenAI API) to provide seamless and accurate translations.
 

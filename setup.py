@@ -14,8 +14,8 @@ setup(
     include_package_data=True,
     author='Samuel Xu',
     author_email='xry200403@gmail.com',
-    description='Translator plugin for GoldenDict',
+    description='An AI Translator as a GoldenDict Extension',
     license='MIT',
-    keywords='translator plugin',
-    url='https://github.com/xrysamuel'
+    keywords='translator extension',
+    url='https://github.com/xrysamuel/GD-Translator'
 )
