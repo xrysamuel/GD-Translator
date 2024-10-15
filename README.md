@@ -1,5 +1,7 @@
 # GD-Translator - AI Translator as GoldenDict Extension
 
+This is a Python AI Translator designed as an extension for [GoldenDict](https://github.com/goldendict/goldendict). This tool leverages LLM API (e.g., OpenAI API) to provide seamless and accurate translations.
+
 ## Getting Started
 
 First, install this package.
@@ -34,3 +36,8 @@ Open `Edit > Dictionaries > Programs`, add an entry with `Type` as `Html`, choos
 ```
 
 You should be able to use the translator then.
+
+
+## Demo
+
+![demo image](media/demo.png)
