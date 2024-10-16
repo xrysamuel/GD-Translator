@@ -1,9 +1,9 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
     name='gdtranslator',
     version='0.0.1',
-    packages=find_packages(),
+    packages=['gdtranslator'],
     install_requires=[
         "openai",
         "flask",
@@ -15,7 +15,6 @@ setup(
     author='Samuel Xu',
     author_email='xry200403@gmail.com',
     description='An AI Translator as a GoldenDict Extension',
-    license='MIT',
     keywords='translator extension',
     url='https://github.com/xrysamuel/GD-Translator'
 )

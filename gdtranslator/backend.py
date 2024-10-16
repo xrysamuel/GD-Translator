@@ -7,7 +7,7 @@ def get_context(source_text):
     context = []
     system_prompt = "你是一位精通简体中文的专业翻译，尤其擅长英译中翻译，你不仅会注意翻译时的准确性，并且你的翻译结果总是符合中文的表达习惯。\n在翻译时，不要作出任何额外的解释，你只需要翻译用户给出的文本。\n保留特定的英文术语、数字或名字，并在其前后加上空格，例如：“生成式 AI 产品”，“不超过 10 秒”。"
     example_source_text = "From protein sequencing to electron microscopy, and from archaeology to astronomy, here are seven technologies that are likely to shake up science in the year ahead."
-    example_target_text = "从蛋白质测序到电子显微镜，从考古学到天文学，这七项技术可能会在未来一年震动科学界的技术。"
+    example_target_text = "从蛋白质测序到电子显微镜，从考古学到天文学，这七项技术可能会在未来一年震动科学界。"
     context.append({"role": "system", "content": system_prompt})
     context.append(
         {

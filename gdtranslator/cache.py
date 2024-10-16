@@ -1,5 +1,6 @@
 from functools import wraps
 from collections import deque
+import threading
 
 
 class LRUCache:
@@ -13,6 +14,7 @@ class LRUCache:
         self.capacity = capacity
         self.cache = dict()
         self.lru_queue = deque()
+        self.lock = threading.Lock()
 
     def get(self, key):
         """
@@ -24,11 +26,12 @@ class LRUCache:
         Returns:
             Value corresponding to the key if found, else None.
         """
-        if key in self.cache:
-            self.lru_queue.remove(key)
-            self.lru_queue.append(key)
-            return self.cache[key]
-        return None
+        with self.lock:
+            if key in self.cache:
+                self.lru_queue.remove(key)
+                self.lru_queue.append(key)
+                return self.cache[key]
+            return None
 
     def put(self, key, value):
         """
@@ -38,14 +41,15 @@ class LRUCache:
             key: Key to be added or updated.
             value: Value corresponding to the key.
         """
-        if key in self.cache:
-            self.lru_queue.remove(key)
-        elif len(self.cache) >= self.capacity:
-            lru_key = self.lru_queue.popleft()
-            del self.cache[lru_key]
+        with self.lock:
+            if key in self.cache:
+                self.lru_queue.remove(key)
+            elif len(self.cache) >= self.capacity:
+                lru_key = self.lru_queue.popleft()
+                del self.cache[lru_key]
 
-        self.cache[key] = value
-        self.lru_queue.append(key)
+            self.cache[key] = value
+            self.lru_queue.append(key)
 
 
 def cached_generator(capacity=100):

@@ -1,1 +1,1 @@
-recursive-include gdtranslator/templates/ *
+recursive-include gdtranslator/templates *
